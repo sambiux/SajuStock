@@ -1,0 +1,199 @@
+.container {
+  padding: 2rem;
+}
+
+.encabezado {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.encabezado h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.botonNuevo {
+  background-color: #E85B2A;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.625rem 1.25rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.botonNuevo:hover {
+  background-color: #d14e22;
+}
+
+.filtros {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.inputBusqueda {
+  flex: 1;
+  padding: 0.625rem 0.875rem;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.selectFiltro {
+  padding: 0.625rem 0.875rem;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  background: #fff;
+}
+
+.botonFiltrar {
+  background: #1a1a1a;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.625rem 1.25rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.error {
+  background-color: #fff0ee;
+  border-left: 3px solid #E85B2A;
+  color: #c0392b;
+  padding: 0.625rem 0.875rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.cargando, .vacio {
+  text-align: center;
+  color: #888;
+  padding: 2rem;
+}
+
+.tabla {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+
+.tabla th {
+  text-align: left;
+  padding: 0.75rem 1rem;
+  background: #fafafa;
+  font-size: 0.8rem;
+  color: #666;
+  border-bottom: 1px solid #eee;
+}
+
+.tabla td {
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  color: #1a1a1a;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.stockBajo {
+  color: #c0392b;
+  font-weight: 700;
+}
+
+.stockOk {
+  color: #1a1a1a;
+}
+
+.acciones {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.botonEditar, .botonEliminar {
+  border: none;
+  border-radius: 4px;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.botonEditar {
+  background: #f0f0f0;
+  color: #1a1a1a;
+}
+
+.botonEliminar {
+  background: #fff0ee;
+  color: #c0392b;
+}
+
+.paginacion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  font-size: 0.875rem;
+}
+
+.paginacion button {
+  padding: 0.5rem 1rem;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  background: #fff;
+  cursor: pointer;
+}
+
+.paginacion button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.modal {
+  background: #fff;
+  border-radius: 8px;
+  padding: 1.75rem;
+  width: 100%;
+  max-width: 560px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal h2 {
+  font-size: 1.25rem;
+  margin-bottom: 1.25rem;
+  color: #1a1a1a;
+}
+.botonCategorias {
+  background-color: #fff;
+  color: #E85B2A;
+  border: 1.5px solid #E85B2A;
+  border-radius: 6px;
+  padding: 0.625rem 1.25rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+
+.botonCategorias:hover {
+  background-color: #fde8df;
+}

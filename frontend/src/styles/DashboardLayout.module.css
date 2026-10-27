@@ -1,0 +1,234 @@
+/* ── Shell ────────────────────────────────────────────────── */
+.shell {
+  min-height: 100vh;
+  background-color: #F7F5F3;
+  display: flex;
+  flex-direction: column;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* ── Topbar ───────────────────────────────────────────────── */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: #ffffff;
+  border-bottom: 1px solid #eeeeee;
+}
+
+/* ── Fila 1: logo + toggle + usuario ─────────────────────── */
+.filaTop {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0.75rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #f7f7f7;
+}
+
+.logoZona {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+/* ── Logo ─────────────────────────────────────────────────── */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logoIcon {
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: #E85B2A;
+  border-radius: 5px;
+  flex-shrink: 0;
+}
+
+.logoText {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  letter-spacing: -0.3px;
+}
+
+/* ── Toggle button ────────────────────────────────────────── */
+.toggleBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  background: none;
+  border: 1px solid #ebebeb;
+  border-radius: 6px;
+  padding: 0.3rem 0.625rem;
+  cursor: pointer;
+  color: #999;
+  font-size: 0.78rem;
+  font-weight: 500;
+  transition: border-color 0.15s, color 0.15s, background-color 0.15s;
+  white-space: nowrap;
+}
+
+.toggleBtn:hover {
+  border-color: #E85B2A;
+  color: #E85B2A;
+  background-color: #fff4f0;
+}
+
+.toggleIcon {
+  font-size: 1rem;
+  line-height: 1;
+  display: inline-block;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: rotate(-90deg);
+}
+
+.toggleIconOpen {
+  transform: rotate(90deg);
+}
+
+.toggleLabel {
+  font-size: 0.75rem;
+}
+
+/* ── Usuario ──────────────────────────────────────────────── */
+.usuarioMenu {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.usuarioNombre {
+  font-size: 0.825rem;
+  font-weight: 500;
+  color: #555;
+}
+
+.avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #E85B2A;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.78rem;
+  flex-shrink: 0;
+}
+
+.botonLogout {
+  background: none;
+  border: 1px solid #e8e8e8;
+  border-radius: 5px;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.78rem;
+  color: #999;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.botonLogout:hover {
+  border-color: #E85B2A;
+  color: #E85B2A;
+}
+
+/* ── Nav wrapper con animación ────────────────────────────── */
+.navWrapper {
+  overflow: hidden;
+  transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navWrapperVisible {
+  max-height: 60px;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.navWrapperHidden {
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(-8px);
+}
+
+/* ── Nav links ────────────────────────────────────────────── */
+.nav {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.nav::-webkit-scrollbar {
+  display: none;
+}
+
+.navLink {
+  position: relative;
+  padding: 0.7rem 1rem;
+  font-size: 0.835rem;
+  font-weight: 500;
+  color: #888;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.15s;
+  border-bottom: 2px solid transparent;
+}
+
+.navLink:hover {
+  color: #1a1a1a;
+}
+
+.navLinkActive {
+  color: #E85B2A;
+  font-weight: 600;
+  border-bottom: 2px solid #E85B2A;
+}
+
+/* ── Contenido ────────────────────────────────────────────── */
+.content {
+  flex: 1;
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+  transition: padding-top 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contentExpanded {
+  padding-top: 2.5rem;
+}
+
+/* ── Responsive ───────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .filaTop {
+    padding: 0.625rem 1rem;
+  }
+
+  .nav {
+    padding: 0 1rem;
+  }
+
+  .usuarioNombre {
+    display: none;
+  }
+
+  .toggleLabel {
+    display: none;
+  }
+
+  .content {
+    padding: 1.25rem 1rem;
+  }
+}

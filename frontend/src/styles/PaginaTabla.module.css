@@ -1,0 +1,273 @@
+.container {
+  padding: 1.5rem 0 2rem;
+}
+
+.encabezado {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.encabezado h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.botonNuevo {
+  background-color: #E85B2A;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.625rem 1.25rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+
+.botonNuevo:hover {
+  background-color: #d14e22;
+}
+
+.filtros {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.inputBusqueda {
+  flex: 1;
+  min-width: 200px;
+  padding: 0.625rem 0.875rem;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  background: #fff;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.inputBusqueda:focus {
+  border-color: #E85B2A;
+}
+
+.selectFiltro {
+  padding: 0.625rem 0.875rem;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  background: #fff;
+  outline: none;
+}
+
+.botonFiltrar {
+  background: #1a1a1a;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.625rem 1.25rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+
+.botonFiltrar:hover {
+  background: #333;
+}
+
+.error {
+  background-color: #fff0ee;
+  border-left: 3px solid #E85B2A;
+  color: #c0392b;
+  padding: 0.625rem 0.875rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.cargando,
+.vacio {
+  text-align: center;
+  color: #888;
+  padding: 3rem;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+/* ── Tabla ─────────────────────────────────────────────────── */
+.tabla {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.tabla th {
+  text-align: left;
+  padding: 0.75rem 1rem;
+  background: #fafafa;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #666;
+  border-bottom: 1px solid #eee;
+  white-space: nowrap;
+}
+
+.tabla td {
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  color: #1a1a1a;
+  border-bottom: 1px solid #f5f5f5;
+  vertical-align: middle;
+}
+
+.tabla tr:last-child td {
+  border-bottom: none;
+}
+
+.tabla tr:hover td {
+  background-color: #fafafa;
+}
+
+/* ── Badges de estado ──────────────────────────────────────── */
+.badgeCompletada,
+.badgePendiente,
+.badgeAnulada {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.badgeCompletada {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.badgePendiente {
+  background: #fef9c3;
+  color: #ca8a04;
+}
+
+.badgeAnulada {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+/* ── Stock ─────────────────────────────────────────────────── */
+.stockBajo {
+  color: #c0392b;
+  font-weight: 700;
+}
+
+.stockOk {
+  color: #16a34a;
+  font-weight: 600;
+}
+
+/* ── Acciones ──────────────────────────────────────────────── */
+.acciones {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.botonEditar,
+.botonEliminar,
+.botonVer {
+  border: none;
+  border-radius: 4px;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: opacity 0.15s;
+  white-space: nowrap;
+}
+
+.botonEditar {
+  background: #f0f0f0;
+  color: #1a1a1a;
+}
+
+.botonEliminar {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.botonVer {
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+.botonEditar:hover,
+.botonEliminar:hover,
+.botonVer:hover {
+  opacity: 0.8;
+}
+
+/* ── Paginación ────────────────────────────────────────────── */
+.paginacion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  font-size: 0.875rem;
+  color: #555;
+}
+
+.paginacion button {
+  padding: 0.5rem 1rem;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  background: #fff;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+
+.paginacion button:hover:not(:disabled) {
+  background: #f5f5f5;
+}
+
+.paginacion button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* ── Modal overlay ─────────────────────────────────────────── */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 1rem;
+}
+
+.modal {
+  background: #fff;
+  border-radius: 10px;
+  padding: 1.75rem;
+  width: 100%;
+  max-width: 580px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.15);
+}
+
+.modal h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0 0 1.25rem;
+  color: #1a1a1a;
+}

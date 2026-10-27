@@ -1,0 +1,82 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.error {
+  background-color: #fff0ee;
+  border-left: 3px solid #E85B2A;
+  color: #c0392b;
+  padding: 0.625rem 0.875rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.campo label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #555;
+}
+
+.campo input,
+.campo select,
+.campo textarea {
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  padding: 0.625rem 0.75rem;
+  font-size: 0.875rem;
+  outline: none;
+}
+
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus {
+  border-color: #E85B2A;
+}
+
+.acciones {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.botonCancelar {
+  background: #f0f0f0;
+  color: #1a1a1a;
+  border: none;
+  border-radius: 6px;
+  padding: 0.625rem 1.25rem;
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+.botonGuardar {
+  background: #E85B2A;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.625rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.botonGuardar:disabled,
+.botonCancelar:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

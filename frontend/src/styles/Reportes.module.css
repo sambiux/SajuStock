@@ -1,0 +1,210 @@
+.container {
+  padding: 1.5rem 0 2rem;
+}
+
+.encabezado {
+  margin-bottom: 1.5rem;
+}
+
+.encabezado h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+/* ── Tabs ───────────────────────────────────────────────────── */
+.tabs {
+  display: flex;
+  gap: 0.25rem;
+  margin-bottom: 1.5rem;
+  background: #fff;
+  padding: 0.375rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+  flex-wrap: wrap;
+}
+
+.tab {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  font-size: 0.875rem;
+  color: #555;
+  cursor: pointer;
+  transition: background-color 0.15s, color 0.15s;
+  white-space: nowrap;
+}
+
+.tab:hover {
+  background: #f5f5f5;
+}
+
+.tabActiva {
+  background: #E85B2A;
+  color: #fff;
+  font-weight: 600;
+}
+
+.tabActiva:hover {
+  background: #d14e22;
+}
+
+/* ── Filtros de fecha ────────────────────────────────────────── */
+.filtros {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-end;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.campofecha {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.campofecha label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #555;
+}
+
+.campofecha input {
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  padding: 0.6rem 0.75rem;
+  font-size: 0.875rem;
+  outline: none;
+  background: #fff;
+}
+
+.campofecha input:focus {
+  border-color: #E85B2A;
+}
+
+.botonFiltrar {
+  background: #1a1a1a;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.625rem 1.25rem;
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+.botonFiltrar:hover {
+  background: #333;
+}
+
+/* ── Estado ──────────────────────────────────────────────────── */
+.error {
+  background-color: #fff0ee;
+  border-left: 3px solid #E85B2A;
+  color: #c0392b;
+  padding: 0.625rem 0.875rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.cargando,
+.vacio {
+  text-align: center;
+  color: #888;
+  padding: 3rem;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+/* ── Contenido ───────────────────────────────────────────────── */
+.contenido {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* ── Stats grid (resumen inventario) ────────────────────────── */
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.statCard {
+  background: #fff;
+  border-radius: 8px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.statLabel {
+  font-size: 0.8rem;
+  color: #888;
+}
+
+.statValor {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.alerta {
+  color: #dc2626;
+}
+
+/* ── Tabla ───────────────────────────────────────────────────── */
+.tabla {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.tabla th {
+  text-align: left;
+  padding: 0.75rem 1rem;
+  background: #fafafa;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #666;
+  border-bottom: 1px solid #eee;
+}
+
+.tabla td {
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  color: #1a1a1a;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.tabla tr:last-child td {
+  border-bottom: none;
+}
+
+.tabla tr:hover td {
+  background: #fafafa;
+}
+
+.stockBajo {
+  color: #ca8a04;
+  font-weight: 700;
+}
+
+.agotado {
+  color: #dc2626;
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
