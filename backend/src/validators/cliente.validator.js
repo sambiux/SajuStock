@@ -27,9 +27,11 @@ const validarCrearCliente = [
     .matches(/^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ0-9\s\-.,#]+$/)
     .withMessage('La dirección contiene caracteres no permitidos'),
 
-  body('documento')
-    .optional({ checkFalsy: true })
+    
+
+    body('documento')
     .trim()
+    .notEmpty().withMessage('El documento es obligatorio')
     .isLength({ max: 50 }).withMessage('El documento es demasiado largo')
     .matches(/^[a-zA-Z0-9\-]+$/)
     .withMessage('El documento solo puede contener letras, números y guiones'),
