@@ -83,7 +83,7 @@ const ProductoForm = ({ producto, categorias, onGuardar, onCancelar, guardando }
         <div className={styles.campo}>
           <label htmlFor="precioVenta">Precio de venta *</label>
           <input
-            id="precioVenta" name="precioVenta" type="number" step="0.01" min="0"
+            id="precioVenta" name="precioVenta" type="number" step="1" min="0"
             value={form.precioVenta} onChange={handleChange} required
           />
         </div>
@@ -91,7 +91,7 @@ const ProductoForm = ({ producto, categorias, onGuardar, onCancelar, guardando }
         <div className={styles.campo}>
           <label htmlFor="precioCompra">Precio de compra</label>
           <input
-            id="precioCompra" name="precioCompra" type="number" step="0.01" min="0"
+            id="precioCompra" name="precioCompra" type="number" step="1" min="0"
             value={form.precioCompra} onChange={handleChange}
           />
         </div>

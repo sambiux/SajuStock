@@ -1,3 +1,4 @@
+import { formatearMoneda } from '../utils/formato';
 import { useState, useEffect } from 'react';
 import { clienteService } from '../services/cliente.service';
 import styles from '../styles/Productos.module.css';
@@ -42,7 +43,7 @@ const HistorialComprasModal = ({ cliente, onCerrar }) => {
                   <td>#{c.id}</td>
                   <td>{new Date(c.creado_en).toLocaleDateString('es-CO')}</td>
                   <td>{c.cantidad_items}</td>
-                  <td>S/ {parseFloat(c.total).toFixed(2)}</td>
+                  <td>{formatearMoneda(parseFloat(c.total))}</td>
                   <td>{c.estado}</td>
                 </tr>
               ))}

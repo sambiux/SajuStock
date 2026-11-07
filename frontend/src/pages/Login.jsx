@@ -112,7 +112,7 @@ const Login = () => {
 
                 <div className={styles.mockupCards}>
                   {[
-                    { label: 'Ventas del día', val: 'S/ 2,450' },
+                    { label: 'Ventas del día', val: '245.000 COP' },
                     { label: 'Productos', val: '128' },
                     { label: 'Stock bajo', val: '15' },
                     { label: 'Clientes', val: '256' },

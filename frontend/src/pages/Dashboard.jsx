@@ -1,3 +1,4 @@
+import { formatearMoneda, formatearNumero } from '../utils/formato';
 import { useAuth } from '../context/AuthContext';
 import { useDashboard } from '../hooks/useDashboard';
 import {
@@ -23,7 +24,7 @@ const TooltipCustom = ({ active, payload }) => {
   if (!active || !payload?.length) return null;
   return (
     <div className={styles.tooltip}>
-      <span>S/ {payload[0].value.toFixed(2)}</span>
+      <span>{formatearMoneda(payload[0].value)}</span>
     </div>
   );
 };
@@ -59,7 +60,7 @@ const Dashboard = () => {
       <div className={styles.resumen}>
         <div className={styles.resumenItem}>
           <span className={styles.resumenValor}>
-            S/ {resumen.ventasDelDia.total.toLocaleString('es-CO', { minimumFractionDigits: 2 })}
+            {formatearMoneda(resumen.ventasDelDia.total)}
           </span>
           <span className={styles.resumenLabel}>Ventas hoy</span>
           {resumen.ventasDelDia.variacion !== 0 && (
@@ -121,8 +122,8 @@ const Dashboard = () => {
                 axisLine={false}
                 tickLine={false}
                 tick={{ fontSize: 11, fill: '#bbb' }}
-                tickFormatter={(v) => `S/ ${v}`}
-                width={70}
+                tickFormatter={(v) => formatearNumero(v)}
+                width={80}
               />
               <Tooltip content={<TooltipCustom />} />
               <Area
@@ -159,7 +160,7 @@ const Dashboard = () => {
                   <span className={styles.ventaFecha}>{formatearFecha(v.creado_en)}</span>
                 </div>
                 <span className={styles.ventaTotal}>
-                  S/ {v.total.toLocaleString('es-CO', { minimumFractionDigits: 2 })}
+                  {formatearMoneda(v.total)}
                 </span>
               </div>
             ))}

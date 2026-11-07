@@ -1,3 +1,4 @@
+import { formatearMoneda } from '../utils/formato';
 import { useState, useEffect } from 'react';
 import { productoService } from '../services/producto.service';
 import styles from '../styles/VentaForm.module.css';
@@ -140,7 +141,7 @@ const CompraForm = ({ onGuardar, onCancelar, guardando }) => {
         <input
           type="number"
           min="0"
-          step="0.01"
+          step="1"
           placeholder="Precio"
           value={precioUnitario}
           onChange={(e) => setPrecioUnitario(e.target.value)}
@@ -169,8 +170,8 @@ const CompraForm = ({ onGuardar, onCancelar, guardando }) => {
               <tr key={i.productoId}>
                 <td>{i.nombre}</td>
                 <td>{i.cantidad}</td>
-                <td>S/ {i.precioUnitario.toFixed(2)}</td>
-                <td>S/ {(i.precioUnitario * i.cantidad).toFixed(2)}</td>
+                <td>{formatearMoneda(i.precioUnitario)}</td>
+                <td>{formatearMoneda((i.precioUnitario * i.cantidad))}</td>
                 <td>
                   <button type="button" onClick={() => quitarItem(i.productoId)} className={styles.botonQuitar}>✕</button>
                 </td>
@@ -180,7 +181,7 @@ const CompraForm = ({ onGuardar, onCancelar, guardando }) => {
           <tfoot>
             <tr>
               <td colSpan="3" className={styles.totalLabel}>Total</td>
-              <td colSpan="2" className={styles.totalValor}>S/ {total.toFixed(2)}</td>
+              <td colSpan="2" className={styles.totalValor}>{formatearMoneda(total)}</td>
             </tr>
           </tfoot>
         </table>

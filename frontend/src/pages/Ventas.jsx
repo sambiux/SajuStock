@@ -1,3 +1,4 @@
+import { formatearMoneda } from '../utils/formato';
 import { useState } from 'react';
 import { useVentas } from '../hooks/useVentas';
 import { ventaService } from '../services/venta.service';
@@ -70,7 +71,7 @@ const Ventas = () => {
                   <td>{v.cliente_nombre || 'Cliente ocasional'}</td>
                   <td>{v.usuario_nombre}</td>
                   <td>{new Date(v.creado_en).toLocaleDateString('es-CO')}</td>
-                  <td>S/ {parseFloat(v.total).toFixed(2)}</td>
+                  <td>{formatearMoneda(parseFloat(v.total))}</td>
                   <td>
                     <span className={v.estado === 'anulada' ? styles.stockBajo : styles.stockOk}>
                       {v.estado}

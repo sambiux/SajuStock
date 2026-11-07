@@ -1,3 +1,4 @@
+import { formatearMoneda } from '../utils/formato';
 import { useState, useEffect, useCallback } from 'react';
 import { useProductos } from '../hooks/useProductos';
 import { productoService } from '../services/producto.service';
@@ -156,7 +157,7 @@ const Productos = () => {
                   <td>{p.nombre}</td>
                   <td>{p.codigo || '—'}</td>
                   <td>{p.categoria_nombre || '—'}</td>
-                  <td>S/ {parseFloat(p.precio_venta).toFixed(2)}</td>
+                  <td>{formatearMoneda(parseFloat(p.precio_venta))}</td>
                   <td>
                     <span className={p.stock <= p.stock_minimo ? styles.stockBajo : styles.stockOk}>
                       {p.stock}

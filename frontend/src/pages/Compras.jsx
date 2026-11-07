@@ -1,3 +1,4 @@
+import { formatearMoneda } from '../utils/formato';
 import { useState } from 'react';
 import { useCompras } from '../hooks/useCompras';
 import { compraService } from '../services/compra.service';
@@ -58,7 +59,7 @@ const Compras = () => {
                   <td>{c.proveedor || '—'}</td>
                   <td>{c.usuario_nombre}</td>
                   <td>{new Date(c.creado_en).toLocaleDateString('es-CO')}</td>
-                  <td>S/ {parseFloat(c.total).toFixed(2)}</td>
+                  <td>{formatearMoneda(parseFloat(c.total))}</td>
                 </tr>
               ))}
             </tbody>

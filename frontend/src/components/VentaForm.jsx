@@ -1,3 +1,4 @@
+import { formatearMoneda } from '../utils/formato';
 import { useState, useEffect } from 'react';
 import { productoService } from '../services/producto.service';
 import { clienteService } from '../services/cliente.service';
@@ -106,7 +107,7 @@ const VentaForm = ({ onGuardar, onCancelar, guardando }) => {
           <option value="">Selecciona un producto...</option>
           {productos.map((p) => (
             <option key={p.id} value={p.id} disabled={p.stock === 0}>
-              {p.nombre} — S/ {parseFloat(p.precio_venta).toFixed(2)} (stock: {p.stock})
+              {p.nombre} — {formatearMoneda(parseFloat(p.precio_venta))} (stock: {p.stock})
             </option>
           ))}
         </select>
@@ -140,8 +141,8 @@ const VentaForm = ({ onGuardar, onCancelar, guardando }) => {
               <tr key={i.productoId}>
                 <td>{i.nombre}</td>
                 <td>{i.cantidad}</td>
-                <td>S/ {i.precioUnitario.toFixed(2)}</td>
-                <td>S/ {(i.precioUnitario * i.cantidad).toFixed(2)}</td>
+                <td>{formatearMoneda(i.precioUnitario)}</td>
+                <td>{formatearMoneda((i.precioUnitario * i.cantidad))}</td>
                 <td>
                   <button type="button" onClick={() => quitarItem(i.productoId)} className={styles.botonQuitar}>✕</button>
                 </td>
@@ -151,7 +152,7 @@ const VentaForm = ({ onGuardar, onCancelar, guardando }) => {
           <tfoot>
             <tr>
               <td colSpan="3" className={styles.totalLabel}>Total</td>
-              <td colSpan="2" className={styles.totalValor}>S/ {total.toFixed(2)}</td>
+              <td colSpan="2" className={styles.totalValor}>{formatearMoneda(total)}</td>
             </tr>
           </tfoot>
         </table>

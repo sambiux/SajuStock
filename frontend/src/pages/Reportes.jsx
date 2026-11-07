@@ -1,3 +1,4 @@
+import { formatearMoneda, formatearNumero } from '../utils/formato';
 import { useState, useEffect, useCallback } from 'react';
 import { reporteService } from '../services/reporte.service';
 import {
@@ -120,11 +121,11 @@ const Reportes = () => {
               </div>
               <div className={styles.statCard}>
                 <span className={styles.statLabel}>Valor a precio venta</span>
-                <span className={styles.statValor}>S/ {parseFloat(datos.valor_venta || 0).toFixed(2)}</span>
+                <span className={styles.statValor}>{formatearMoneda(parseFloat(datos.valor_venta || 0))}</span>
               </div>
               <div className={styles.statCard}>
                 <span className={styles.statLabel}>Valor a costo</span>
-                <span className={styles.statValor}>S/ {parseFloat(datos.valor_costo || 0).toFixed(2)}</span>
+                <span className={styles.statValor}>{formatearMoneda(parseFloat(datos.valor_costo || 0))}</span>
               </div>
               <div className={styles.statCard}>
                 <span className={styles.statLabel}>Productos stock bajo</span>
@@ -166,7 +167,7 @@ const Reportes = () => {
                         <td>{p.nombre}</td>
                         <td>{p.codigo || '—'}</td>
                         <td>{p.total_vendido}</td>
-                        <td>S/ {parseFloat(p.total_ingresos).toFixed(2)}</td>
+                        <td>{formatearMoneda(parseFloat(p.total_ingresos))}</td>
                         <td>{p.veces_vendido}</td>
                       </tr>
                     ))}
@@ -192,8 +193,8 @@ const Reportes = () => {
                     </defs>
                     <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f0f0f0" />
                     <XAxis dataKey="fecha" tick={{ fontSize: 11, fill: '#999' }} />
-                    <YAxis axisLine={false} tickLine={false} tick={{ fontSize: 11, fill: '#999' }} tickFormatter={(v) => `S/ ${v}`} />
-                    <Tooltip formatter={(v) => [`S/ ${parseFloat(v).toFixed(2)}`, 'Ingresos']} contentStyle={{ borderRadius: 8, fontSize: '0.85rem' }} />
+                    <YAxis axisLine={false} tickLine={false} tick={{ fontSize: 11, fill: '#999' }} tickFormatter={(v) => formatearNumero(v)} />
+                    <Tooltip formatter={(v) => [formatearMoneda(v), 'Ingresos']} contentStyle={{ borderRadius: 8, fontSize: '0.85rem' }} />
                     <Area type="monotone" dataKey="total_ingresos" stroke="#E85B2A" strokeWidth={2} fill="url(#gradFecha)" />
                   </AreaChart>
                 </ResponsiveContainer>
@@ -209,8 +210,8 @@ const Reportes = () => {
                       <tr key={d.fecha}>
                         <td>{new Date(d.fecha).toLocaleDateString('es-CO')}</td>
                         <td>{d.cantidad_ventas}</td>
-                        <td>S/ {parseFloat(d.total_ingresos).toFixed(2)}</td>
-                        <td>S/ {parseFloat(d.ticket_promedio).toFixed(2)}</td>
+                        <td>{formatearMoneda(parseFloat(d.total_ingresos))}</td>
+                        <td>{formatearMoneda(parseFloat(d.ticket_promedio))}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -229,8 +230,8 @@ const Reportes = () => {
                   <BarChart data={datos} margin={{ top: 10, right: 20, left: 0, bottom: 60 }}>
                     <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f0f0f0" />
                     <XAxis dataKey="nombre" tick={{ fontSize: 11, fill: '#999' }} angle={-35} textAnchor="end" interval={0} />
-                    <YAxis axisLine={false} tickLine={false} tick={{ fontSize: 11, fill: '#999' }} tickFormatter={(v) => `S/ ${v}`} />
-                    <Tooltip formatter={(v) => [`S/ ${parseFloat(v).toFixed(2)}`, 'Total gastado']} contentStyle={{ borderRadius: 8, fontSize: '0.85rem' }} />
+                    <YAxis axisLine={false} tickLine={false} tick={{ fontSize: 11, fill: '#999' }} tickFormatter={(v) => formatearNumero(v)} />
+                    <Tooltip formatter={(v) => [formatearMoneda(v), 'Total gastado']} contentStyle={{ borderRadius: 8, fontSize: '0.85rem' }} />
                     <Bar dataKey="total_gastado" fill="#E85B2A" radius={[4, 4, 0, 0]} />
                   </BarChart>
                 </ResponsiveContainer>
@@ -248,7 +249,7 @@ const Reportes = () => {
                         <td>{c.nombre}</td>
                         <td>{c.email || '—'}</td>
                         <td>{c.cantidad_compras}</td>
-                        <td>S/ {parseFloat(c.total_gastado).toFixed(2)}</td>
+                        <td>{formatearMoneda(parseFloat(c.total_gastado))}</td>
                       </tr>
                     ))}
                   </tbody>
