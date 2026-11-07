@@ -95,11 +95,13 @@ const VentaForm = ({ onGuardar, onCancelar, guardando }) => {
       <div className={styles.campo}>
         <label htmlFor="cliente">Cliente (opcional)</label>
         <select id="cliente" value={clienteId} onChange={(e) => setClienteId(e.target.value)}>
-          <option value="">Cliente ocasional</option>
-          {clientes.map((c) => (
-            <option key={c.id} value={c.id}>{c.nombre}</option>
-          ))}
-        </select>
+  <option value="">Cliente ocasional</option>
+  {clientes
+    .filter((c) => c.documento)
+    .map((c) => (
+      <option key={c.id} value={c.id}>{c.documento}</option>
+      ))}
+      </select>
       </div>
 
       <div className={styles.agregarItem}>
