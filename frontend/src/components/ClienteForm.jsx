@@ -52,9 +52,16 @@ const ClienteForm = ({ cliente, onGuardar, onCancelar, guardando }) => {
           <input id="nombre" name="nombre" value={form.nombre} onChange={handleChange} required />
         </div>
 
-        <div className={styles.campo}>
-          <label htmlFor="documento">Documento</label>
-          <input id="documento" name="documento" value={form.documento} onChange={handleChange} placeholder="DNI / NIT / RUC" />
+                <div className={styles.campo}>
+          <label htmlFor="documento">Documento *</label>
+          <input
+            id="documento"
+            name="documento"
+            value={form.documento}
+            onChange={handleChange}
+            placeholder="Cédula / NIT"
+            required
+          />
         </div>
 
         <div className={styles.campo}>
