@@ -342,3 +342,14 @@
     width: 100%;
   }
 }
+
+.linkOlvide {
+  font-size: 0.85rem;
+  color: #E85B2A;
+  text-decoration: none;
+  text-align: center;
+}
+
+.linkOlvide:hover {
+  text-decoration: underline;
+}

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import styles from '../styles/Login.module.css';
 import TypedInfo from '../components/typedInfo';
@@ -75,6 +75,10 @@ const Login = () => {
               autoComplete="current-password"
               className={styles.input}
             />
+
+            <Link to="/olvide-password" className={styles.linkOlvide}>
+                ¿Olvidaste tu contraseña?
+            </Link>
 
             <button type="submit" className={styles.botonLogin} disabled={cargando}>
               {cargando ? 'Iniciando...' : 'Log in'}

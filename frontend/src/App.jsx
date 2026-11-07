@@ -11,6 +11,8 @@ import Compras from './pages/Compras';
 import Reportes from './pages/Reportes';
 import Proveedores from './pages/Proveedores';
 import Configuracion from './pages/Configuracion';
+import OlvidePassword from './pages/OlvidePassword';
+import RestablecerPassword from './pages/RestablecerPassword';
 import './styles/global.css';
 
 const App = () => {
@@ -19,7 +21,8 @@ const App = () => {
       <AuthProvider>
         <Routes>
           <Route path="/login" element={<Login />} />
-
+          <Route path="/olvide-password" element={<OlvidePassword />} />
+          <Route path="/restablecer-password" element={<RestablecerPassword />} />
           {/* Rutas accesibles para todos los usuarios autenticados */}
           <Route element={<RutaProtegida><DashboardLayout /></RutaProtegida>}>
             <Route path="/dashboard"  element={<Dashboard />} />
