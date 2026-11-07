@@ -11,6 +11,7 @@ const compraRoutes    = require('./compra.routes');
 const reporteRoutes   = require('./reporte.routes');
 const proveedorRoutes = require('./proveedor.routes');
 const usuarioRoutes   = require('./usuario.routes');
+const recuperacionRoutes = require('./recuperacion.routes');
 
 router.use('/auth',        authRoutes);
 router.use('/productos',   productoRoutes);
@@ -22,5 +23,6 @@ router.use('/compras',     compraRoutes);
 router.use('/reportes',    reporteRoutes);
 router.use('/proveedores', proveedorRoutes);
 router.use('/usuarios',    usuarioRoutes);
+router.use('/recuperacion', recuperacionRoutes);
 
 module.exports = router;

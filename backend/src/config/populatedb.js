@@ -60,6 +60,18 @@ async function main() {
 
   console.log(" Usuario administrador creado");
 
+  await client.query(`
+  CREATE TABLE IF NOT EXISTS password_resets (
+    id          SERIAL PRIMARY KEY,
+    usuario_id  INTEGER      NOT NULL REFERENCES usuarios(id) ON DELETE CASCADE,
+    token_hash  VARCHAR(64)  NOT NULL UNIQUE,
+    expira_en   TIMESTAMPTZ  NOT NULL,
+    usado       BOOLEAN      NOT NULL DEFAULT false,
+    creado_en   TIMESTAMPTZ  NOT NULL DEFAULT NOW()
+  );
+`);
+    console.log('  ✅ Tabla password_resets');
+
   await client.end();
 
   console.log("Done");
